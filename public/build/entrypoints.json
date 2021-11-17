@@ -1,0 +1,15 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "http://localhost:8080/build/runtime.js",
+        "http://localhost:8080/build/vendors-node_modules_mapbox-gl_dist_mapbox-gl_css-node_modules_symfony_webpack-encore_node_mo-81ed64.js",
+        "http://localhost:8080/build/app.js"
+      ],
+      "css": [
+        "http://localhost:8080/build/vendors-node_modules_mapbox-gl_dist_mapbox-gl_css-node_modules_symfony_webpack-encore_node_mo-81ed64.css",
+        "http://localhost:8080/build/app.css"
+      ]
+    }
+  }
+}
