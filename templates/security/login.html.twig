@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Bennevole{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -16,7 +16,7 @@
     <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <h2 class="text-center text-dark mt-5">Bennevole</h2>
+        <h2 class="text-center text-dark mt-5">Admin Bennevole</h2>
         <div class="card my-5" style="padding: 10%;">
 
           <form class="card-body cardbody-color p-lg-5">
@@ -30,7 +30,7 @@
               <input type="text" class="form-control" placeholder="User Name" value="{{ last_username }}" name="username" id="inputUsername" autocomplete="username" required autofocus>
             </div>
             <div class="mb-3">
-              <input type="password" class="form-control" placeholder="password" name="password" id="inputPassword"  autocomplete="current-password" required>
+              <input type="password" class="form-control" placeholder="Password" name="password" id="inputPassword"  autocomplete="current-password" required>
               <input type="hidden" name="_csrf_token"
               value="{{ csrf_token('authenticate') }}">
             </div>

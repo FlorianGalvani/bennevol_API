@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Cities;
 use App\Entity\Departements;
 use App\Entity\Dumpsters;
+use App\Entity\Report;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -23,6 +24,7 @@ class DashboardController extends AbstractDashboardController
         $url = $routeBuilder->setController(CitiesCrudController::class)->generateUrl();
         $url = $routeBuilder->setController(DepartementsCrudController::class)->generateUrl();
         $url = $routeBuilder->setController(DumpstersCrudController::class)->generateUrl();
+        $url = $routeBuilder->setController(ReportCrudController::class)->generateUrl();
 
         return $this->redirect($url);
     }
@@ -39,6 +41,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Cities', 'fas fa-city', Cities::class);
         yield MenuItem::linkToCrud('Departements', 'fas fa-map-marker-alt', Departements::class);
         yield MenuItem::linkToCrud('Dumpsters', 'fas fa-dumpster-fire', Dumpsters::class);
+        yield MenuItem::linkToCrud('Report', 'fas fa-file-code', Report::class);
         
     }
 }
