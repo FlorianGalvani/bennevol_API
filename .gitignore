@@ -7,6 +7,8 @@
 /var/
 /vendor/
 /.composer.lock
+/.package-lock.json
+/.yarn.lock
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
