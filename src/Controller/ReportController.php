@@ -19,7 +19,7 @@ class ReportController extends AbstractController
 {
 
     
-       /**
+    /**
      * @Route("/api/report/{id}", name="report_new")
      */ 
     public function new(Request $request, EntityManagerInterface $entityManager,DumpstersRepository $dumpstersRepository,int $id): JsonResponse
