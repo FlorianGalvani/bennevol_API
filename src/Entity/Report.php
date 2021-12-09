@@ -10,6 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Report
 {
+    public function __toString()
+    {
+        return $this->id;
+    }
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -31,7 +35,7 @@ class Report
      * @ORM\ManyToOne(targetEntity=Dumpsters::class, inversedBy="reports")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $dumpsters;
+    private $dumpster;
 
     public function getId(): ?int
     {
@@ -62,14 +66,14 @@ class Report
         return $this;
     }
 
-    public function getDumpsters(): ?Dumpsters
+    public function getDumpster(): ?Dumpsters
     {
-        return $this->dumpsters;
+        return $this->dumpster;
     }
 
-    public function setDumpsters(?Dumpsters $dumpsters): self
+    public function setDumpster(?Dumpsters $dumpster): self
     {
-        $this->dumpsters = $dumpsters;
+        $this->dumpster = $dumpster;
 
         return $this;
     }
