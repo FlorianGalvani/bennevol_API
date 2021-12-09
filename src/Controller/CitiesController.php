@@ -10,9 +10,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CitiesController extends AbstractController
-{
-    
-       /**
+{   
+    /**
      * @Route("/api/cities", name="cities")
      */ 
     public function getCities(CitiesRepository $citiesRepository): JsonResponse
