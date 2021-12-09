@@ -1,19 +1,20 @@
-#Installation des packages
+# 1. Installation des packages
 ```
 composer install
 ```
-#Création de la BDD
+# 2. Vérifier le .env
+# 3. Création de la BDD
 ```
 php bin/console d:d:c
 ```
-#Migrations
+# 4. Migrations
 ```
 php bin/console m:mi
 ```
 ```
 php bin/console d:m:m
 ```
-#Rentrer les valeurs en BDD
+# 5. Rentrer les valeurs en BDD
 ```
 php bin/console d:f:l
 ```
