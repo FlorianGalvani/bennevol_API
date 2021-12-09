@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DumpstersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Dumpsters
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -18,7 +21,7 @@ class Dumpsters
     private $id;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float" )
      */
     private $lng;
 
@@ -32,6 +35,16 @@ class Dumpsters
      * @ORM\JoinColumn(nullable=false)
      */
     private $city;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Report::class, mappedBy="dumpster")
+     */
+    private $reports;
+
+    public function __construct()
+    {
+        $this->reports = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -70,6 +83,36 @@ class Dumpsters
     public function setCity(?Cities $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Report[]
+     */
+    public function getReports(): Collection
+    {
+        return $this->reports;
+    }
+
+    public function addReport(Report $report): self
+    {
+        if (!$this->reports->contains($report)) {
+            $this->reports[] = $report;
+            $report->setDumpster($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReport(Report $report): self
+    {
+        if ($this->reports->removeElement($report)) {
+            // set the owning side to null (unless already changed)
+            if ($report->getDumpster() === $this) {
+                $report->setDumpster(null);
+            }
+        }
 
         return $this;
     }

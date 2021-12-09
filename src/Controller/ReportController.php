@@ -28,10 +28,10 @@ class ReportController extends AbstractController
         $data['dumpsters'] = $dumpster;
         //TODO: Verification des donnÃ©es
         $report = new Report();
-        $report->getDumpsters($data['dumpsters']);
+        $report->getDumpster($data['dumpsters']);
         $report->setType($data['type'])
         ->setInformation($data['information'])
-        ->setDumpsters($data['dumpsters']);
+        ->setDumpster($data['dumpsters']);
 
         $entityManager->persist($report);
         $entityManager->flush();

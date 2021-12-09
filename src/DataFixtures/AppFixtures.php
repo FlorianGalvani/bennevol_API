@@ -37,13 +37,15 @@ class AppFixtures extends Fixture
         foreach ($villes_data as $ville_data) {
             if (isset($ville_data->fields->commune)) {
                 if (in_array($ville_data->fields->commune, $villesNames)) {
+
                 } else {
-                    array_push($villesNames, $ville_data->fields->commune);
-                }
-            } else {
-                if (in_array('Commune de Poitier', $villesNames)) {
-                } else {
-                    array_push($villesNames, 'Commune de Poitier');
+                    // check if is not a int
+                    print($ville_data->fields->commune);
+                    if (is_numeric($ville_data->fields->commune)) {
+                       
+                    } else {
+                        array_push($villesNames, $ville_data->fields->commune);
+                    }
                 }
             }
         }
@@ -162,12 +164,7 @@ class AppFixtures extends Fixture
                 } else {
                     array_push($villesNames, $ville_data->commune);
                 }
-            } // } else {
-            //     if (in_array('Commune de Toulouse', $villesNames)) {
-            //     } else {
-            //         array_push($villesNames, 'Commune de Toulouse');
-            //     }
-            // }
+            } 
         }
         foreach ($villesNames as $value) {
             $ville =  new Cities();
