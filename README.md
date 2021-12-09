@@ -7,6 +7,8 @@ composer install
 ```
 php bin/console d:d:c
 ```
+
+(ajouter un dossier 'migrations' à la racine) (temporaire)
 # 4. Migrations
 ```
 php bin/console m:mi
