@@ -11,7 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CitiesController extends AbstractController
 {
-    #[Route('/api/cities', name: 'cities')]
+    
+       /**
+     * @Route("/api/cities", name="cities")
+     */ 
     public function getCities(CitiesRepository $citiesRepository): JsonResponse
     {
         $repo = $citiesRepository->findAll();
