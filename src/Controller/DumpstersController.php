@@ -14,8 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DumpstersController extends AbstractController
 {
-    
-       /**
+    /**
      * @Route("/api/dumpsters/{name}", name="dumpsters_ByCity")
      */ 
     public function getDumpstersByCity(CitiesRepository $citiesRepository, string $name): JsonResponse
